@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Archive</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <section class="intro" aria-labelledby="intro-title">
+        <div class="intro__content">
+          <p class="intro__eyebrow">Portfolio Archive</p>
+          <h1 id="intro-title">
+            조용한 장면을 모아<br />
+            또렷한 흐름으로<br />
+            기록합니다.
+          </h1>
+          <p class="intro__note">디자인, 이미지, 인터랙션을 다루는 개인 작업 아카이브</p>
+        </div>
+        <a class="intro__scroll" href="#works" aria-label="작업물 갤러리로 이동">Scroll</a>
+      </section>
+
+      <section class="gallery" id="works" aria-labelledby="works-title">
+        <header class="profile-mark">
+          <h2 id="works-title">Bae Suhyun</h2>
+          <p>Visual Designer / Creative Archive</p>
+        </header>
+
+        <div class="gallery__rail" aria-label="작업물 목록">
+          <button class="work-card" type="button" data-project="picknic">
+            <img
+              src="images/표지/picknic 표지.png"
+              alt="picknic 작업 표지"
+            />
+            <div class="work-card__meta">
+              <h3>Picknic</h3>
+              <p>2026</p>
+            </div>
+          </button>
+
+          <button class="work-card" type="button" data-project="vooo">
+            <img
+              src="images/표지/vooo 표지.png"
+              alt="vooo 작업 표지"
+            />
+            <div class="work-card__meta">
+              <h3>Vooo</h3>
+              <p>2026</p>
+            </div>
+          </button>
+
+          <button class="work-card" type="button" data-project="tung">
+            <img
+              src="images/표지/텅 표지.png"
+              alt="텅 작업 표지"
+            />
+            <div class="work-card__meta">
+              <h3>텅</h3>
+              <p>2025</p>
+            </div>
+          </button>
+
+          <button class="work-card" type="button" data-project="hanpok">
+            <img
+              src="images/표지/한푝 표지.png"
+              alt="한폭 작업 표지"
+            />
+            <div class="work-card__meta">
+              <h3>한폭</h3>
+              <p>2025</p>
+            </div>
+          </button>
+
+          <button class="work-card" type="button" data-project="plank">
+            <img
+              src="images/표지/plank 표지.png"
+              alt="plank 작업 표지"
+            />
+            <div class="work-card__meta">
+              <h3>Plank</h3>
+              <p>2025</p>
+            </div>
+          </button>
+
+          <button class="work-card" type="button" data-project="archive01">
+            <img
+              src="https://picsum.photos/seed/archive-01/900/1300"
+              alt="Archive 01 작업 표지"
+            />
+            <div class="work-card__meta">
+              <h3>Archive 01</h3>
+              <p>2024</p>
+            </div>
+          </button>
+
+          <button class="work-card" type="button" data-project="archive02">
+            <img
+              src="https://picsum.photos/seed/archive-02/900/1300"
+              alt="Archive 02 작업 표지"
+            />
+            <div class="work-card__meta">
+              <h3>Archive 02</h3>
+              <p>2024</p>
+            </div>
+          </button>
+
+          <button class="work-card" type="button" data-project="archive03">
+            <img
+              src="https://picsum.photos/seed/archive-03/900/1300"
+              alt="Archive 03 작업 표지"
+            />
+            <div class="work-card__meta">
+              <h3>Archive 03</h3>
+              <p>2024</p>
+            </div>
+          </button>
+
+          <button class="work-card" type="button" data-project="archive04">
+            <img
+              src="https://picsum.photos/seed/archive-04/900/1300"
+              alt="Archive 04 작업 표지"
+            />
+            <div class="work-card__meta">
+              <h3>Archive 04</h3>
+              <p>2023</p>
+            </div>
+          </button>
+
+          <button class="work-card" type="button" data-project="archive05">
+            <img
+              src="https://picsum.photos/seed/archive-05/900/1300"
+              alt="Archive 05 작업 표지"
+            />
+            <div class="work-card__meta">
+              <h3>Archive 05</h3>
+              <p>2023</p>
+            </div>
+          </button>
+
+          <button class="work-card" type="button" data-project="archive06">
+            <img
+              src="https://picsum.photos/seed/archive-06/900/1300"
+              alt="Archive 06 작업 표지"
+            />
+            <div class="work-card__meta">
+              <h3>Archive 06</h3>
+              <p>2023</p>
+            </div>
+          </button>
+
+          <button class="work-card" type="button" data-project="archive07">
+            <img
+              src="https://picsum.photos/seed/archive-07/900/1300"
+              alt="Archive 07 작업 표지"
+            />
+            <div class="work-card__meta">
+              <h3>Archive 07</h3>
+              <p>2022</p>
+            </div>
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <div class="project-modal" id="project-modal" aria-hidden="true">
+      <div class="project-modal__overlay" data-close-modal></div>
+      <section
+        class="project-modal__panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-title"
+      >
+        <button class="project-modal__close" type="button" data-close-modal aria-label="팝업 닫기">
+          ×
+        </button>
+
+        <div class="project-modal__images" id="modal-images" aria-label="프로젝트 이미지"></div>
+
+        <div class="project-modal__info">
+          <p class="project-modal__label" id="modal-period"></p>
+          <h2 id="modal-title"></h2>
+          <p id="modal-description"></p>
+          <a class="project-modal__link" id="modal-link" href="#" target="_blank" rel="noreferrer">
+            Visit Project
+          </a>
+        </div>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
