@@ -6,10 +6,10 @@ const projects = {
       "일상의 이동과 머무름을 가볍게 기록하는 서비스 콘셉트 작업입니다. 장소 이미지, 사용 흐름, 시각 언어를 중심으로 포트폴리오용 더미 설명을 구성했습니다.",
     link: "https://example.com/picknic",
     images: [
-      "images/표지/picknic 표지.png",
-      "images/picknic/Slide 16_9 - 331.png",
-      "images/picknic/Slide 16_9 - 330.png",
-      "images/picknic/Slide 16_9 - 310.png",
+      "images/covers/picknic-cover.png",
+      "images/details/picknic-1.png",
+      "images/details/picknic-2.png",
+      "images/details/picknic-3.png",
     ],
   },
   vooo: {
@@ -19,9 +19,9 @@ const projects = {
       "브랜드의 첫인상을 빠르게 전달하기 위한 비주얼 시스템 작업입니다. 컬러, 타입, 화면 톤을 하나의 흐름으로 정리한 더미 프로젝트입니다.",
     link: "https://example.com/vooo",
     images: [
-      "images/표지/vooo 표지.png",
-      "images/표지/picknic 표지.png",
-      "images/표지/텅 표지.png",
+      "images/covers/vooo-cover.png",
+      "images/covers/picknic-cover.png",
+      "images/covers/tung-cover.png",
     ],
   },
   tung: {
@@ -31,9 +31,9 @@ const projects = {
       "비어 있는 공간과 여백을 중심으로 한 실험적 인터페이스 작업입니다. 이미지의 밀도보다 감상자의 시선 흐름에 초점을 둔 더미 설명입니다.",
     link: "https://example.com/tung",
     images: [
-      "images/표지/텅 표지.png",
-      "images/plank/plank_2.png",
-      "images/plank/plank_3.png",
+      "images/covers/tung-cover.png",
+      "images/details/plank-2.png",
+      "images/details/plank-3.png",
     ],
   },
   hanpok: {
@@ -43,9 +43,9 @@ const projects = {
       "전통적 이미지와 현대적 화면 구성을 연결하는 그래픽 아카이브 작업입니다. 프로젝트 소개, 과정 이미지, 외부 링크를 담기 위한 더미 콘텐츠입니다.",
     link: "https://example.com/hanpok",
     images: [
-      "images/표지/한푝 표지.png",
-      "images/plank/plank_표지.png",
-      "images/표지/plank 표지.png",
+      "images/covers/hanpok-cover.png",
+      "images/details/plank-main.png",
+      "images/covers/plank-cover.png",
     ],
   },
   plank: {
@@ -55,10 +55,10 @@ const projects = {
       "제품의 구조와 사용 맥락을 시각적으로 정리한 인터페이스 아카이브 작업입니다. 실제 프로젝트 이미지와 더미 설명을 함께 배치했습니다.",
     link: "https://example.com/plank",
     images: [
-      "images/표지/plank 표지.png",
-      "images/plank/plank_표지.png",
-      "images/plank/plank_2.png",
-      "images/plank/plank_3.png",
+      "images/covers/plank-cover.png",
+      "images/details/plank-main.png",
+      "images/details/plank-2.png",
+      "images/details/plank-3.png",
     ],
   },
   archive01: {
@@ -155,6 +155,8 @@ const modalDescription = document.querySelector("#modal-description");
 const modalLink = document.querySelector("#modal-link");
 const introSection = document.querySelector(".intro");
 const gallerySection = document.querySelector("#works");
+const tabButtons = document.querySelectorAll("[data-tab]");
+const tabPanels = document.querySelectorAll("[data-tab-panel]");
 let lastFocusedElement = null;
 let isSectionScrolling = false;
 let openingCard = null;
@@ -171,7 +173,7 @@ function openProject(projectId) {
   modalPeriod.textContent = project.period;
   modalDescription.textContent = project.description;
   modalLink.href = project.link;
-  modalLink.textContent = `${project.title} 외부 페이지`;
+  modalLink.textContent = "외부페이지";
   modalImages.innerHTML = project.images
     .map((image, index) => `<img src="${image}" alt="${project.title} 프로젝트 이미지 ${index + 1}" />`)
     .join("");
@@ -215,6 +217,22 @@ document.querySelectorAll("[data-project]").forEach((card) => {
 
 document.querySelectorAll("[data-close-modal]").forEach((button) => {
   button.addEventListener("click", closeProject);
+});
+
+tabButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const selectedTab = button.dataset.tab;
+
+    tabButtons.forEach((tabButton) => {
+      tabButton.classList.toggle("is-active", tabButton === button);
+    });
+
+    tabPanels.forEach((panel) => {
+      const isSelected = panel.dataset.tabPanel === selectedTab;
+      panel.hidden = !isSelected;
+      panel.classList.toggle("is-active", isSelected);
+    });
+  });
 });
 
 document.addEventListener("keydown", (event) => {

@@ -22,15 +22,29 @@
       </section>
 
       <section class="gallery" id="works" aria-labelledby="works-title">
-        <header class="profile-mark">
-          <h2 id="works-title">Bae Suhyun</h2>
-          <p>Visual Designer / Creative Archive</p>
+        <header class="gallery-header">
+          <h2 class="gallery-header__name" id="works-title">Bae Suhyun</h2>
+
+          <div class="gallery-header__about" aria-label="소개">
+            <strong>About</strong>
+            <p>
+              Visual designer exploring quiet interfaces, image-led systems, and digital archives.
+              This space collects selected works, notes, and open contact points.
+            </p>
+          </div>
+
+          <nav class="gallery-tabs" aria-label="포트폴리오 섹션">
+            <button class="gallery-tabs__button is-active" type="button" data-tab="work">WORK</button>
+            <button class="gallery-tabs__button" type="button" data-tab="journal">JOURNAL</button>
+            <button class="gallery-tabs__button" type="button" data-tab="contact">CONTACT</button>
+          </nav>
         </header>
 
-        <div class="gallery__rail" aria-label="작업물 목록">
+        <div class="gallery-panel is-active" id="panel-work" data-tab-panel="work">
+          <div class="gallery__rail" aria-label="작업물 목록">
           <button class="work-card" type="button" data-project="picknic">
             <img
-              src="images/표지/picknic 표지.png"
+              src="images/covers/picknic-cover.png"
               alt="picknic 작업 표지"
             />
             <div class="work-card__meta">
@@ -41,7 +55,7 @@
 
           <button class="work-card" type="button" data-project="vooo">
             <img
-              src="images/표지/vooo 표지.png"
+              src="images/covers/vooo-cover.png"
               alt="vooo 작업 표지"
             />
             <div class="work-card__meta">
@@ -52,7 +66,7 @@
 
           <button class="work-card" type="button" data-project="tung">
             <img
-              src="images/표지/텅 표지.png"
+              src="images/covers/tung-cover.png"
               alt="텅 작업 표지"
             />
             <div class="work-card__meta">
@@ -63,7 +77,7 @@
 
           <button class="work-card" type="button" data-project="hanpok">
             <img
-              src="images/표지/한푝 표지.png"
+              src="images/covers/hanpok-cover.png"
               alt="한폭 작업 표지"
             />
             <div class="work-card__meta">
@@ -74,7 +88,7 @@
 
           <button class="work-card" type="button" data-project="plank">
             <img
-              src="images/표지/plank 표지.png"
+              src="images/covers/plank-cover.png"
               alt="plank 작업 표지"
             />
             <div class="work-card__meta">
@@ -159,6 +173,30 @@
               <p>2022</p>
             </div>
           </button>
+          </div>
+        </div>
+
+        <div class="gallery-panel gallery-panel--text" id="panel-journal" data-tab-panel="journal" hidden>
+          <div class="gallery-copy">
+            <p class="gallery-copy__label">Journal</p>
+            <h3>Small notes from ongoing visual experiments.</h3>
+            <p>
+              작업 과정에서 남긴 관찰, 레퍼런스, 실패한 시안과 다시 시도한 방향을 모아두는
+              더미 저널 영역입니다. 실제 글이 추가되면 날짜별 노트나 짧은 프로젝트 로그로
+              확장할 수 있습니다.
+            </p>
+          </div>
+        </div>
+
+        <div class="gallery-panel gallery-panel--text" id="panel-contact" data-tab-panel="contact" hidden>
+          <div class="gallery-copy">
+            <p class="gallery-copy__label">Contact</p>
+            <h3>Open to visual design, archive, and interaction projects.</h3>
+            <p>
+              협업 문의, 포트폴리오 피드백, 프로젝트 제안은 아래 더미 연락처로 연결됩니다.
+              Email: hello@example.com / Instagram: @example.archive
+            </p>
+          </div>
         </div>
       </section>
     </main>
